@@ -1,31 +1,10 @@
 window.onload = function(){
-  changePartner();
   AOS.init();
-}
+  changePartner();
   $(".textShowMore").hide();
-
-  // Preloader
-  $(window).on('load', function () {
-    if ($('#preloader').length) {
-      $('#preloader').delay(100).fadeOut('slow', function () {
-        $(this).remove();
-      });
-    }
-  });
-
-  // Back to top button
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-      $('.back-to-top').fadeIn('slow');
-    } else {
-      $('.back-to-top').fadeOut('slow');
-    }
-  });
-  $('.back-to-top').click(function(){
-    $('html, body').animate({scrollTop : 0},1500);
-    return false;
-  });
-
+  document.getElementById("formSubmit").addEventListener("click", proveri);
+  subscribeBtn.addEventListener('click', newsletterValidatation);
+}
   // Mobile Navigation
   if ($('#nav-menu-container').length) {
     var $mobile_nav = $('#nav-menu-container').clone().prop({
@@ -79,7 +58,7 @@ window.onload = function(){
     $('#header').addClass('header-scrolled');
   }
 
-  // Smooth scroll
+  // scroll
   $('.nav-menu a, #mobile-nav a, .scrollto').on('click', function() {
      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
        var target = $(this.hash);
@@ -223,6 +202,11 @@ $('#classes-flters li').on( 'click', function() {
         izabranaBoja.addEventListener("click", hideColorMsg);
       }else{
           alert("Please choose your color!");
+          document.getElementById("izabranaBoja").innerHTML =
+          "<p title='Click to hide'>The color is back to the <b>default</b>!</p>";
+          izabranaBoja.style.opacity = 1;
+          izabranaBoja.style.transition="opacity 2s ease-in-out";
+          izabranaBoja.addEventListener("click", hideColorMsg);
         }
   }
  // uklanjanje poruke
@@ -242,18 +226,119 @@ $('#classes-flters li').on( 'click', function() {
   // Store
   // Retrieve
 
+ // FORMA
+  // submit prevent
+ $('#formSubmit').click(function(e){
+  e.preventDefault();
+});
 
-/*
-function changeColor(){
-var textColor = document.getElementById("planets");
-var pColor = textColor.getElementsByTagName("p");
-var tColor = textColor.getElementsByClassName('description')
-for(let i = 0; i < pColor.length; i++){
-  for(let i = 0; i < tColor.length; i++){
-      let color = document.getElementById('colorInputText').value;
-      pColor[i].style.color = color;
-      tColor[i].style.color = color;
-  }
+  // dinamicka lista
+ var nizSati = ["Choose...", "1-2", "2-4", "4-8", "8-16"];
+ var ispisSati = "";
+
+ for(let i in nizSati){
+   ispisSati += `
+     <option value="${i}">${nizSati[i]}</option>
+   `;
  }
-}
-*/
+ document.getElementById("listaPitanje").innerHTML = ispisSati;
+
+ // provera forme
+ function proveri(){
+   // datum
+   var date = document.getElementById("date").value;
+   var dateTime = new Date();
+   var dateYear = dateTime.getFullYear();
+   var dateMonths = dateTime.getMonth() + parseInt("1");
+   var dateDay = dateTime.getDate();
+   var nizDate = date.split("-");
+   if(Number(nizDate[0]) < dateYear || Number(nizDate[1]) < dateMonths || Number(nizDate[2]) < dateDay){
+     document.getElementById("date").classList.remove("dobar");
+     document.getElementById("date").classList.add("greska");
+     document.getElementById("dateAlert").innerHTML = "Please choose a date!";
+   }
+   else{
+     document.getElementById("date").classList.remove("greska");
+     document.getElementById("date").classList.add("dobar");
+     document.getElementById("dateAlert").innerHTML = "";
+   }
+
+   // forma
+   var firstName = document.getElementById("firstName").value;
+   var lastName = document.getElementById("lastName").value;
+   var poruka = document.getElementById("message").value;
+   var email = document.getElementById("email").value;
+
+   var regexFirstName = /^[A-Z][a-z]+$/;
+   if(!regexFirstName.test(firstName)){
+     document.getElementById("firstName").classList.remove("dobar");
+     document.getElementById("firstName").classList.add("greska");
+     document.getElementById("nameAlert").innerHTML = "Please write a correct name!";
+   }
+   else{
+     document.getElementById("firstName").classList.remove("greska");
+     document.getElementById("firstName").classList.add("dobar");
+     document.getElementById("nameAlert").innerHTML = "";
+   }
+
+   var regexLastName = /^[A-Z][a-z]+$/;
+   if(!regexLastName.test(lastName)){
+     document.getElementById("lastName").classList.remove("dobar");
+     document.getElementById("lastName").classList.add("greska");
+     document.getElementById("lnameAlert").innerHTML = "Please write a correct Last Name!";
+   }
+   else{
+     document.getElementById("lastName").classList.remove("greska");
+     document.getElementById("lastName").classList.add("dobar");
+     document.getElementById("lnameAlert").innerHTML = "";
+   }
+
+   var regexMessage = /^[A-ZČĆŽŠĐ][a-zčćžšđ]([\d \w]{5,100})$/;
+   if(!regexMessage.test(poruka)){
+     document.getElementById("message").classList.remove("dobar");
+     document.getElementById("message").classList.add("greska");
+     document.getElementById("msgAlert").innerHTML = "Please write a message!";
+   }
+   else{
+     document.getElementById("message").classList.remove("greska");
+     document.getElementById("message").classList.add("dobar");
+     document.getElementById("msgAlert").innerHTML = "";
+   }
+   var regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
+   if(!regexEmail.test(email)){
+     document.getElementById("email").classList.remove("dobar");
+     document.getElementById("email").classList.add("greska");
+     document.getElementById("emailAlert").innerHTML = "Please write a correct email!";
+   }
+   else{
+     document.getElementById("email").classList.remove("greska");
+     document.getElementById("email").classList.add("dobar");
+     document.getElementById("emailAlert").innerHTML = "";
+   }
+
+   if(document.getElementById("listaPitanje").value == 0){
+     document.getElementById("listaPitanje").classList.remove("dobar");
+     document.getElementById("listaPitanje").classList.add("greska");
+     document.getElementById("pitanjeAlert").innerHTML = "Please choose one of the ansfers!";
+   }
+   else{
+     document.getElementById("listaPitanje").classList.remove("greska");
+     document.getElementById("listaPitanje").classList.add("dobar");
+     document.getElementById("pitanjeAlert").innerHTML = "";
+   }
+ }
+
+
+// newsletter
+let newsletter = document.querySelector('.newsletter'),
+    subscribeBtn = document.querySelector('#subscribeBtn');
+    $('#subscribeBtn').click(function(e){
+        e.preventDefault();
+    });
+    newsletterValidatation = () => {
+      let a = newsletter.value,
+          b = /^[a-zšđžćč]{4,}(\.)?[a-zšđžćč]{4,}([0-9]{0,5})?\@((gmail)|(outlook)|(msn)|(live)|(hotmail)|(yahoo)|\w)\.com$/,
+          c = document.querySelector('#msgNewsletter');
+          b.test(a) ? c.innerHTML = "Thanks!" : c.innerHTML="Please write your email!";
+          b.test(a) ? c.style.color = "green" : c.style.color = "red";
+       };

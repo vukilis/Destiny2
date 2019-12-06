@@ -47,14 +47,6 @@
           <li><a href="#about">About</a></li>
           <li><a href="#planets">Planets</a></li>
           <li><a href="#classes">Classes</a></li>
-          <li class="menu-has-children"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li>
           <li><a href="#contact">Contact</a></li>
         </ul>
       </nav>
@@ -475,71 +467,58 @@
 
         <div class="section-header">
           <h3>Contact Us</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <p>If you have a message for us please fill out the form</p>
         </div>
 
-        <div class="row contact-info">
-
-          <div class="col-md-4">
-            <div class="contact-address">
-              <i class="ion-ios-location-outline"></i>
-              <h3>Address</h3>
-              <address>A108 Adam Street, NY 535022, USA</address>
+        <form action="" method="POST" name="form" id="formaTest">
+          <div class="form-row">
+            <div class="from-group col-lg-6 col-sm-12">
+              <label for="fname">First Name</label>
+              <input type = "text" id="firstName" class="form-control" placeholder="First Name"/>
+              <span id="nameAlert"></span>
             </div>
+          <div class="form-group col-lg-6 col-sm-12">
+              <label for="lname">Last Name</label>
+              <input type = "text" id="lastName" class="form-control" placeholder="Last Name"/>
+              <span id="lnameAlert"></span>
           </div>
-
-          <div class="col-md-4">
-            <div class="contact-phone">
-              <i class="ion-ios-telephone-outline"></i>
-              <h3>Phone Number</h3>
-              <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
-            </div>
+         </div>
+        <div class="form-row">
+          <div class="form-group col-lg-6 col-sm-12">
+            <label for="date">Date</label>
+            <input type = "date" id="date" class="form-control"/>
+            <span id="dateAlert"></span>
           </div>
-
-          <div class="col-md-4">
-            <div class="contact-email">
-              <i class="ion-ios-email-outline"></i>
-              <h3>Email</h3>
-              <p><a href="mailto:info@example.com">info@example.com</a></p>
-            </div>
+          <div class="form-group col-lg-6 col-sm-12">
+            <label for="email">Email</label>
+            <input type = "text" id="email" class="form-control" placeholder="Email"/>
+            <span id="emailAlert"></span>
           </div>
-
-        </div>
-
-        <div class="form">
-          <div id="sendmessage">Your message has been sent. Thank you!</div>
-          <div id="errormessage"></div>
-          <form action="" method="post" role="form" class="contactForm">
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group col-md-6">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validation"></div>
-              </div>
+          </div>
+          <div class="form-row margina">
+            <div class="form-group col-lg-6 col-sm-12">
+              <label for="msg">Message</label>
+              <textarea type = "text" id="message" class="form-control" placeholder="Leave message!" cols="30" rows="4"></textarea>
+              <span id="msgAlert"></span>
             </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-              <div class="validation"></div>
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-              <div class="validation"></div>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
-          </form>
-        </div>
-
+          <div class="form-group col-lg-6 col-sm-12">
+            <label class="col-lg-12">How many time do you spend on games per day?</label>
+            <div class="col-lg-10">
+            <select id="listaPitanje" name="satiIgranja" class="form-control">
+          </select>
+          <span id="pitanjeAlert"></span>
+          </div>
+          </div>
+          <div class="form-row col-lg-12 col-sm-12">
+            <button type="submit" class="toggle" id="formSubmit">Submit</button>
+          </div>
+        </form>
       </div>
-    </section><!-- #contact -->
+    </section>
 
   </main>
 
-  <!--==========================
-    Footer
-  ============================-->
+  <!-- Footer -->
   <footer id="footer">
     <div class="footer-top">
       <div class="container">
@@ -553,16 +532,15 @@
           <div class="col-lg-4 col-md-6 footer-contact">
             <h4>Social media</h4>
             <div class="social-links">
-              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="https://twitter.com/DestinyTheGame" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.facebook.com/destiny2community/" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/destinythegame/" class="instagram"><i class="fa fa-instagram"></i></a>
             </div>
             <h4 id="authorDoc">Author | Sitemap | Documentation</h4>
             <div class="social-links">
-              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="img/classes/class4.png" data-fancybox="class" data-caption="Warlock Dawnblade" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+              <a href="author.html" target="_blank"><i class="ion ion-eye"></i></a>
+              <a href="sitemap.xml" target="_blank"><i class="fa fa-sitemap"></i></a>
+              <a href="#"><i class="fa fa-file-text"></i></a>
             </div>
           </div>
 
@@ -570,7 +548,9 @@
             <h4>Our Newsletter</h4>
             <p>Let's stay in touch with new news</p>
             <form action="" method="post">
-              <input type="email" name="email"><input type="submit"  value="Subscribe">
+              <input type="email" name="email" class="newsletter">
+              <button type="submit" id="subscribeBtn">Submit</button>
+              <span id="msgNewsletter"></span>
             </form>
           </div>
 
@@ -588,6 +568,7 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="lib/isotope/isotope.pkgd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

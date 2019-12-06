@@ -9,6 +9,10 @@
 # General
 --------------------------------------------------------------*/
 
+#nameAlert, #lnameAlert, #dateAlert, #emailAlert, #msgAlert, #pitanjeAlert {
+  color: red;
+}
+
 body {
   background: #fff;
   color: #666666;
@@ -185,6 +189,7 @@ h6 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  text-align: center;
 }
 
 #intro .carousel-item::before {
@@ -1418,6 +1423,45 @@ min-height: 200px;
   padding: 15px;
   font-weight: 600;
   margin-bottom: 15px;
+}
+
+.greska {
+    border: 2px solid red;
+}
+
+.dobar {
+    border: 2px solid #0f0;
+}
+
+#subscribeBtn{
+  width: 20%;
+  height: 33px;
+  color: #fff;
+  background: linear-gradient(to right, rgba(92,245,171,1) 0%, rgba(74,222,187,1) 100%);
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#msgNewsletter{
+  display: block;
+}
+
+#author{
+  width: 30%;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+#authorDrzac{
+  text-align: center;
+  display: inline-grid;
+}
+#authorDrzac .toggle{
+  width: 30%;
+}
+#authorDrzac .toggle{
+  color: white;
 }
 
 #contact .form #errormessage {
