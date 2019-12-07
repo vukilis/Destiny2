@@ -5,58 +5,6 @@ window.onload = function(){
   document.getElementById("formSubmit").addEventListener("click", proveri);
   subscribeBtn.addEventListener('click', newsletterValidatation);
 }
-  // Mobile Navigation
-  if ($('#nav-menu-container').length) {
-    var $mobile_nav = $('#nav-menu-container').clone().prop({
-      id: 'mobile-nav'
-    });
-    $mobile_nav.find('> ul').attr({
-      'class': '',
-      'id': ''
-    });
-    $('body').append($mobile_nav);
-    $('body').prepend('<button type="button" id="mobile-nav-toggle"><i class="fa fa-bars"></i></button>');
-    $('body').append('<div id="mobile-body-overly"></div>');
-    $('#mobile-nav').find('.menu-has-children').prepend('<i class="fa fa-chevron-down"></i>');
-
-    $(document).on('click', '.menu-has-children i', function(e) {
-      $(this).next().toggleClass('menu-item-active');
-      $(this).nextAll('ul').eq(0).slideToggle();
-      $(this).toggleClass("fa-chevron-up fa-chevron-down");
-    });
-
-    $(document).on('click', '#mobile-nav-toggle', function(e) {
-      $('body').toggleClass('mobile-nav-active');
-      $('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
-      $('#mobile-body-overly').toggle();
-    });
-
-    $(document).click(function(e) {
-      var container = $("#mobile-nav, #mobile-nav-toggle");
-      if (!container.is(e.target) && container.has(e.target).length === 0) {
-        if ($('body').hasClass('mobile-nav-active')) {
-          $('body').removeClass('mobile-nav-active');
-          $('#mobile-nav-toggle i').toggleClass('fa-times fa-bars');
-          $('#mobile-body-overly').fadeOut();
-        }
-      }
-    });
-  } else if ($("#mobile-nav, #mobile-nav-toggle").length) {
-    $("#mobile-nav, #mobile-nav-toggle").hide();
-  }
-
-  // Header scroll
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-      $('#header').addClass('header-scrolled');
-    } else {
-      $('#header').removeClass('header-scrolled');
-    }
-  });
-
-  if ($(window).scrollTop() > 100) {
-    $('#header').addClass('header-scrolled');
-  }
 
   // scroll
   $('.nav-menu a, #mobile-nav a, .scrollto').on('click', function() {
@@ -184,16 +132,9 @@ $('#classes-flters li').on( 'click', function() {
         let color = document.getElementById('colorInputText').value;
         pColor[i].style.color = color;
         tColor[i].style.color = color;
-                                                                 // storage ------------------------------
-        localStorage.setItem('izabranaBoja', 1);
-
-        if (localStorage.getItem('izabranaBoja') === '1'){
-            izabranaBoja.style.opacity = 1;
-            console.log(localStorage);
         }
-    }
-    // poruka
    }
+       // poruka
      if(color = document.getElementById('colorInputText').value){
         document.getElementById("izabranaBoja").innerHTML =
         "<p title='Click to hide'>The color chosen is <b>" + color + "</b>!</p>";
@@ -361,4 +302,16 @@ let newsletter = document.querySelector('.newsletter'),
           c = document.querySelector('#msgNewsletter');
           b.test(a) ? c.innerHTML = "Thanks!" : c.innerHTML="Please write your email!";
           b.test(a) ? c.style.color = "green" : c.style.color = "red";
+          // local storage za newsletter - set
+             if(localStorage){
+                localStorage.setItem("newsletter", a);
+                console.log(localStorage);
+             }
+             else{
+                console.log("localStorage not supported");
+             }
        };
+        // Local storage newsletter - get
+        if(localStorage){
+          document.querySelector(".newsletter").value=localStorage.getItem("newsletter");
+        }

@@ -404,7 +404,7 @@ h6 {
 }
 
 .nav-menu ul {
-  margin: 4px 0 0 0;
+  margin: 4px 55 0 0;
   padding: 10px;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   background: #fff;
@@ -1371,6 +1371,49 @@ min-height: 200px;
 /* Contact Section
 --------------------------------*/
 
+#burger li{
+  display: inline-block;
+  margin: 10px;
+  background: rgba(0, 0, 0, 0.9);
+}
+.burger div{
+  width: 85px;
+  height: 5px;
+  background: #ffffff;
+  margin: 6px 0;
+    text-align: right;
+}
+#burger{
+  float: right;
+  visibility:hidden;
+}
+
+@media screen and (max-width: 768px){
+  #burger{
+  visibility: visible;
+}
+.burger{
+display: block;
+height: 40px;
+float: right;
+cursor: pointer;
+}
+
+#burger li{
+  display: none;
+}
+#burger li.open{
+float: none;
+text-align: left;
+margin:0;
+visibility: visible;
+display: block;
+text-align: center;
+padding-top: 40px;
+width: 100%;
+height: auto;
+}
+}
 #contact {
   padding: 60px 0;
 }
@@ -1738,7 +1781,7 @@ min-height: 200px;
     font-size: 28px;
   }
 
-  #nav-menu-container {
+  .nav-menu:first-child {
     display: none;
   }
 
