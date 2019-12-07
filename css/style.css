@@ -226,6 +226,12 @@ h6 {
 
 #intro .carousel-background img {
   max-width: 100%;
+  min-height: 100vh;
+}
+
+.img-fluid{
+  min-width: -moz-available;
+  min-width: -webkit-fill-available;
 }
 
 #intro .carousel-content {
@@ -1743,6 +1749,19 @@ height: auto;
   #testimonials .testimonial-item p {
     width: 80%;
   }
+  .promenaBoje{
+    width: 35%;
+  }
+}
+@media only screen and (max-width: 768px) and (min-width: 400px) {
+  .promenaBoje{
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 992px) and (min-width: 768px) {
+  .promenaBoje{
+    width: 50%;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1885,4 +1904,19 @@ height: auto;
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+body::-webkit-scrollbar {
+  width: 20px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(17, 17, 17);
+  border-left-style: solid;
+  border-width: 1px;
+  border-color: #424242;
+}
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, rgba(92,245,171,1) 0%, rgba(74,222,187,1) 100%);
+  border-radius: 30px;
 }

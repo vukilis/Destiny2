@@ -155,7 +155,6 @@ $('#classes-flters li').on( 'click', function() {
     if(izabranaBoja){
       izabranaBoja.style.opacity = 0;
       izabranaBoja.style.transition="opacity 2s ease-in-out";
-      console.log(izabranaBoja);
     } else{
       izabranaBoja.style.opacity = 1;
       izabranaBoja.style.transition="opacity 2s ease-in-out";
@@ -169,7 +168,7 @@ $('#classes-flters li').on( 'click', function() {
 });
 
   // dinamicka lista
- var nizSati = ["Choose...", "1-2", "2-4", "4-8", "8-16"];
+ var nizSati = ["Choose...", "1-2h", "2-4h", "4-8h", "8-16h"];
  var ispisSati = "";
 
  for(let i in nizSati){
