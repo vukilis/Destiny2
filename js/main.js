@@ -221,11 +221,6 @@ $('#classes-flters li').on( 'click', function() {
     }
   }
 
-  // local storage za boju
-
-  // Store
-  // Retrieve
-
  // FORMA
   // submit prevent
  $('#formSubmit').click(function(e){
@@ -264,6 +259,7 @@ $('#classes-flters li').on( 'click', function() {
    }
 
    // forma
+   var ispravno = true;
    var firstName = document.getElementById("firstName").value;
    var lastName = document.getElementById("lastName").value;
    var poruka = document.getElementById("message").value;
@@ -274,6 +270,7 @@ $('#classes-flters li').on( 'click', function() {
      document.getElementById("firstName").classList.remove("dobar");
      document.getElementById("firstName").classList.add("greska");
      document.getElementById("nameAlert").innerHTML = "Please write a correct name!";
+     ispravno = false;
    }
    else{
      document.getElementById("firstName").classList.remove("greska");
@@ -286,6 +283,7 @@ $('#classes-flters li').on( 'click', function() {
      document.getElementById("lastName").classList.remove("dobar");
      document.getElementById("lastName").classList.add("greska");
      document.getElementById("lnameAlert").innerHTML = "Please write a correct Last Name!";
+     ispravno = false;
    }
    else{
      document.getElementById("lastName").classList.remove("greska");
@@ -309,6 +307,7 @@ $('#classes-flters li').on( 'click', function() {
      document.getElementById("email").classList.remove("dobar");
      document.getElementById("email").classList.add("greska");
      document.getElementById("emailAlert").innerHTML = "Please write a correct email!";
+     ispravno = false;
    }
    else{
      document.getElementById("email").classList.remove("greska");
@@ -326,6 +325,27 @@ $('#classes-flters li').on( 'click', function() {
      document.getElementById("listaPitanje").classList.add("dobar");
      document.getElementById("pitanjeAlert").innerHTML = "";
    }
+
+// local storage za formu - set
+   if(ispravno){
+   if(localStorage){
+      localStorage.setItem("firstName", firstName);
+      localStorage.setItem("lastName", lastName);
+      localStorage.setItem("email", email);
+      console.log(localStorage);
+   }
+   else{
+      console.log("localStorage not supported");
+   }
+ }
+}
+ // local storage za formu
+
+ // Local storage - get
+ if(localStorage){
+   document.querySelector("#firstName").value=localStorage.getItem("firstName");
+   document.querySelector("#lastName").value=localStorage.getItem("lastName");
+   document.querySelector("#email").value=localStorage.getItem("email");
  }
 
 
@@ -337,7 +357,7 @@ let newsletter = document.querySelector('.newsletter'),
     });
     newsletterValidatation = () => {
       let a = newsletter.value,
-          b = /^[a-zšđžćč]{4,}(\.)?[a-zšđžćč]{4,}([0-9]{0,5})?\@((gmail)|(outlook)|(msn)|(live)|(hotmail)|(yahoo)|\w)\.com$/,
+          b = /^[a-zšđžćč]{4,}(\.)?[a-zšđžćč]{4,}([0-9]{0,5})?\@((gmail)|(yahoo)|\w)\.com$/,
           c = document.querySelector('#msgNewsletter');
           b.test(a) ? c.innerHTML = "Thanks!" : c.innerHTML="Please write your email!";
           b.test(a) ? c.style.color = "green" : c.style.color = "red";
