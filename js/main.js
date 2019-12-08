@@ -6,6 +6,36 @@ window.onload = function(){
   subscribeBtn.addEventListener('click', newsletterValidatation);
 }
 
+ // dinamicki meni
+
+ var menu =[
+   {
+     href : "#intro",
+     name : "Home"
+ },
+ {
+   href : "#about",
+   name : "about"
+ },
+ {
+  href : "#planets",
+  name : "planets"
+ },
+ {
+  href : "#classes",
+  name : "classes"
+ },
+ {
+  href : "#contact",
+  name : "contact"
+ },
+]
+ var ispisMenija =""
+ for(let i = 0; i < menu.length; i++){
+   ispisMenija +=`<li class="menulink"><a href="${menu[i].href}">${menu[i].name}</a></li>`
+ }
+document.querySelector(".nav-menu").innerHTML = ispisMenija;
+
   // scroll
   $('.nav-menu a, #mobile-nav a, .scrollto').on('click', function() {
      if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
