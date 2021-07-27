@@ -19,7 +19,6 @@
   <!-- Libraries CSS Files -->
   <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
   <link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet">
-  <link href="lib/animate/animate.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
 
@@ -29,34 +28,31 @@
 
 <body>
 
-  <!--==========================
-    Header
-  ============================-->
+  <!-- Header -->
   <header id="header">
     <div class="container-fluid">
 
       <div id="logo" class="pull-left" data-aos="fade-right" data-aos-duration="1000">
-        <!--<h1><a href="#intro" class="scrollto">Destiny 2</a></h1>-->
-        <!-- Uncomment below if you prefer to use an image logo -->
         <a href="#intro" class="scrollto"><img src="img/destiny2/logo1.png" alt="logo" title="" style="width:40px;"/></a>
       </div>
 
       <nav id="nav-menu-container" data-aos="fade-down" data-aos-duration="1000">
         <ul class="nav-menu">
+        </ul>
+        <!--Navigation mobile-->
+      <div id="burger" class="burger">
+        <div></div>
+        <div></div>
+        <div></div>
+        <br>
+        <ul class="nav-menu">
           <li class="menu-active"><a href="#intro">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#planets">Planets</a></li>
           <li><a href="#classes">Classes</a></li>
-          <li class="menu-has-children"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li>
           <li><a href="#contact">Contact</a></li>
         </ul>
+      </div>
       </nav>
     </div>
   </header>
@@ -117,7 +113,7 @@
       <div class="container">
         <div class="row">
 
-          <div class="col-lg-4 box" data-aos="fade-right" data-aos-duration="1000">
+          <div class="col-lg-4 box" data-aos="fade-up" data-aos-duration="1000">
             <i class="ion-ios-help-outline"></i>
             <h4 class="title">HELP THE VANGUARD</a></h4>
             <p class="description">Work with Ikora Rey to hunt down the source of the Vex invasion and put a stop to it.</p>
@@ -129,7 +125,7 @@
             <p class="description">Fight back the Vex in an all-new 6-player matchmade activity: Vex Offensive.</p>
           </div>
 
-          <div class="col-lg-4 box" data-aos="fade-left" data-aos-duration="1000">
+          <div class="col-lg-4 box" data-aos="fade-up" data-aos-duration="1000">
             <i class="ion-ios-box-outline"></i>
             <h4 class="title">UNLOCK NEW WEAPONS</a></h4>
             <p class="description">Choose which weapon you want to add to your arsenal and complete the associated Pursuit to claim it.</p>
@@ -249,19 +245,19 @@
         </header>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6 box" data-aos="fade-right" data-aos-duration="3000">
+          <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-duration="3000">
             <h4 class="title">EARTH</h4>
             <p class="description">The cradle of humanity - a world of ancient glory, waiting to be retaken.</p>
           </div>
-          <div class="col-lg-4 col-md-6 box" data-aos="fade-down" data-aos-duration="3000">
+          <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-duration="3000">
             <h4 class="title">TOWER</h4>
             <p class="description">What remains of humanity lives in the Last City, beneath the Traveler and the watchful eyes of the Guardians in their Tower.</p>
           </div>
-          <div class="col-lg-4 col-md-6 box" data-aos="fade-left" data-aos-duration="3000">
+          <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-duration="3000">
             <h4 class="title">MERCURY</h4>
             <p class="description">The planet closest to the Sun, and most consumed by the Vex.</p>
           </div>
-          <div class="col-lg-4 col-md-6 box" data-aos="fade-right" data-aos-duration="3000">
+          <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-duration="3000">
             <h4 class="title">I O</h4>
             <p class="description">A moon of Jupiter, still rife with the energy of the Traveler.</p>
           </div>
@@ -269,13 +265,13 @@
             <h4 class="title">MARS</h4>
             <p class="description">Home to the BrayTech Futurescape and Rasputin. Overrun by the Hive.</p>
           </div>
-          <div class="col-lg-4 col-md-6 box" data-aos="fade-left" data-aos-duration="3000">
+          <div class="col-lg-4 col-md-6 box" data-aos="fade-up" data-aos-duration="3000">
             <h4 class="title">NESSUS</h4>
             <p class="description">A planetoid with an irregualr orbit, converted by the Vex for purposes unknown.</p>
           </div>
 
         </div>
-                <!-- promena pozadinske boje i cuvanje iste -->
+                <!-- promena pozadinske boje-->
                 <div class="promenaBoje">
                   <input type="text" id="colorInputText" placeholder="Unesi boju" autocomplete="on" data-aos="fade-right" data-aos-duration="3000">
                   <input type="button" id="colorButton" value="Change Color Text" onclick="changeColor()" data-aos="fade-left" data-aos-duration="3000">
@@ -456,7 +452,7 @@
     </section>
 
     <!-- Partners Section -->
-    <section id="partners" data-aos="fade-up" data-aos-duration="1000">
+    <section id="partners">
       <div class="container">
 
         <header class="section-header">
@@ -464,7 +460,6 @@
         </header>
 
         <div class="owl-carousel partners-slide">
-
           <img src="img/clients/client-1.png" alt="partner1" id="partnersImg">
         </div>
       </div>
@@ -475,71 +470,58 @@
 
         <div class="section-header">
           <h3>Contact Us</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
+          <p>If you have a message for us please fill out the form</p>
         </div>
 
-        <div class="row contact-info">
-
-          <div class="col-md-4">
-            <div class="contact-address">
-              <i class="ion-ios-location-outline"></i>
-              <h3>Address</h3>
-              <address>A108 Adam Street, NY 535022, USA</address>
+        <form action="" method="POST" name="form" id="formaTest">
+          <div class="form-row">
+            <div class="from-group col-lg-6 col-sm-12">
+              <label for="fname">First Name</label>
+              <input type = "text" id="firstName" class="form-control" placeholder="First Name"/>
+              <span id="nameAlert"></span>
             </div>
+          <div class="form-group col-lg-6 col-sm-12">
+              <label for="lname">Last Name</label>
+              <input type = "text" id="lastName" class="form-control" placeholder="Last Name"/>
+              <span id="lnameAlert"></span>
           </div>
-
-          <div class="col-md-4">
-            <div class="contact-phone">
-              <i class="ion-ios-telephone-outline"></i>
-              <h3>Phone Number</h3>
-              <p><a href="tel:+155895548855">+1 5589 55488 55</a></p>
-            </div>
+         </div>
+        <div class="form-row">
+          <div class="form-group col-lg-6 col-sm-12">
+            <label for="date">Date</label>
+            <input type = "date" id="date" class="form-control"/>
+            <span id="dateAlert"></span>
           </div>
-
-          <div class="col-md-4">
-            <div class="contact-email">
-              <i class="ion-ios-email-outline"></i>
-              <h3>Email</h3>
-              <p><a href="mailto:info@example.com">info@example.com</a></p>
-            </div>
+          <div class="form-group col-lg-6 col-sm-12">
+            <label for="email">Email</label>
+            <input type = "text" id="email" class="form-control" placeholder="Email"/>
+            <span id="emailAlert"></span>
           </div>
-
-        </div>
-
-        <div class="form">
-          <div id="sendmessage">Your message has been sent. Thank you!</div>
-          <div id="errormessage"></div>
-          <form action="" method="post" role="form" class="contactForm">
-            <div class="form-row">
-              <div class="form-group col-md-6">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group col-md-6">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validation"></div>
-              </div>
+          </div>
+          <div class="form-row margina">
+            <div class="form-group col-lg-6 col-sm-12">
+              <label for="msg">Message</label>
+              <textarea type = "text" id="message" class="form-control" placeholder="Leave message!" cols="30" rows="4"></textarea>
+              <span id="msgAlert"></span>
             </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-              <div class="validation"></div>
-            </div>
-            <div class="form-group">
-              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-              <div class="validation"></div>
-            </div>
-            <div class="text-center"><button type="submit">Send Message</button></div>
-          </form>
-        </div>
-
+          <div class="form-group col-lg-6 col-sm-12">
+            <label class="col-lg-12">How many time do you spend on games per day?</label>
+            <div class="col-lg-10">
+            <select id="listaPitanje" name="satiIgranja" class="form-control">
+          </select>
+          <span id="pitanjeAlert"></span>
+          </div>
+          </div>
+          <div class="form-row col-lg-12 col-sm-12">
+            <button type="submit" class="toggle" id="formSubmit">Submit</button>
+          </div>
+        </form>
       </div>
-    </section><!-- #contact -->
+    </section>
 
   </main>
 
-  <!--==========================
-    Footer
-  ============================-->
+  <!-- Footer -->
   <footer id="footer">
     <div class="footer-top">
       <div class="container">
@@ -553,16 +535,16 @@
           <div class="col-lg-4 col-md-6 footer-contact">
             <h4>Social media</h4>
             <div class="social-links">
-              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="https://twitter.com/DestinyTheGame" class="twitter" target="_blank"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.facebook.com/destiny2community/" class="facebook" target="_blank"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.instagram.com/destinythegame/" class="instagram" target="_blank"><i class="fa fa-instagram"></i></a>
             </div>
-            <h4 id="authorDoc">Author | Sitemap | Documentation</h4>
+            <h4 id="authorDoc">Author | Sitemap | Documentation | CSS</h4>
             <div class="social-links">
-              <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-              <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-              <a href="img/classes/class4.png" data-fancybox="class" data-caption="Warlock Dawnblade" class="link-preview" title="Preview"><i class="ion ion-eye"></i></a>
+              <a href="author.html" target="_blank"><i class="ion ion-eye"></i></a>
+              <a href="sitemap.xml" target="_blank"><i class="fa fa-sitemap"></i></a>
+              <a href="dokumentacija.pdf" target="_blank"><i class="fa fa-file-text"></i></a>
+              <a href="lib/bootstrap/css/bootstrap.css" target="_blank"><i class="fa fa-css3"></i></a>
             </div>
           </div>
 
@@ -570,17 +552,18 @@
             <h4>Our Newsletter</h4>
             <p>Let's stay in touch with new news</p>
             <form action="" method="post">
-              <input type="email" name="email"><input type="submit"  value="Subscribe">
+              <input type="email" name="email" class="newsletter">
+              <button type="submit" id="subscribeBtn">Submit</button>
+              <span id="msgNewsletter"></span>
             </form>
           </div>
 
         </div>
       </div>
     </div>
-  </footer><!-- #footer -->
+  </footer>
 
   <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-  <!-- Uncomment below i you want to use a preloader -->
    <div id="preloader"></div>
 
   <!-- JavaScript -->
@@ -588,6 +571,7 @@
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script src="lib/isotope/isotope.pkgd.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

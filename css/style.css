@@ -9,6 +9,10 @@
 # General
 --------------------------------------------------------------*/
 
+#nameAlert, #lnameAlert, #dateAlert, #emailAlert, #msgAlert, #pitanjeAlert {
+  color: red;
+}
+
 body {
   background: #fff;
   color: #666666;
@@ -185,6 +189,7 @@ h6 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  text-align: center;
 }
 
 #intro .carousel-item::before {
@@ -221,6 +226,12 @@ h6 {
 
 #intro .carousel-background img {
   max-width: 100%;
+  min-height: 100vh;
+}
+
+.img-fluid{
+  min-width: -moz-available;
+  min-width: -webkit-fill-available;
 }
 
 #intro .carousel-content {
@@ -399,7 +410,7 @@ h6 {
 }
 
 .nav-menu ul {
-  margin: 4px 0 0 0;
+  margin: 4px 55 0 0;
   padding: 10px;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   background: #fff;
@@ -1366,6 +1377,49 @@ min-height: 200px;
 /* Contact Section
 --------------------------------*/
 
+#burger li{
+  display: inline-block;
+  margin: 10px;
+  background: rgba(0, 0, 0, 0.9);
+}
+.burger div{
+  width: 85px;
+  height: 5px;
+  background: #ffffff;
+  margin: 6px 0;
+    text-align: right;
+}
+#burger{
+  float: right;
+  visibility:hidden;
+}
+
+@media screen and (max-width: 768px){
+  #burger{
+  visibility: visible;
+}
+.burger{
+display: block;
+height: 40px;
+float: right;
+cursor: pointer;
+}
+
+#burger li{
+  display: none;
+}
+#burger li.open{
+float: none;
+text-align: left;
+margin:0;
+visibility: visible;
+display: block;
+text-align: center;
+padding-top: 40px;
+width: 100%;
+height: auto;
+}
+}
 #contact {
   padding: 60px 0;
 }
@@ -1418,6 +1472,45 @@ min-height: 200px;
   padding: 15px;
   font-weight: 600;
   margin-bottom: 15px;
+}
+
+.greska {
+    border: 2px solid red;
+}
+
+.dobar {
+    border: 2px solid #0f0;
+}
+
+#subscribeBtn{
+  width: 20%;
+  height: 33px;
+  color: #fff;
+  background: linear-gradient(to right, rgba(92,245,171,1) 0%, rgba(74,222,187,1) 100%);
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#msgNewsletter{
+  display: block;
+}
+
+#author{
+  width: 30%;
+  margin: auto;
+  margin-bottom: 100px;
+}
+
+#authorDrzac{
+  text-align: center;
+  display: inline-grid;
+}
+#authorDrzac .toggle{
+  width: 30%;
+}
+#authorDrzac .toggle{
+  color: white;
 }
 
 #contact .form #errormessage {
@@ -1521,10 +1614,6 @@ min-height: 200px;
 .social-links{
   text-align: center;
   margin-top: 5px;
-}
-.social-links a:nth-child(4){
-   border-left: 4px solid #18d26e;
-   margin-left: 15px;
 }
 
 #authorDoc{
@@ -1656,6 +1745,19 @@ min-height: 200px;
   #testimonials .testimonial-item p {
     width: 80%;
   }
+  .promenaBoje{
+    width: 35%;
+  }
+}
+@media only screen and (max-width: 768px) and (min-width: 400px) {
+  .promenaBoje{
+    width: 75%;
+  }
+}
+@media only screen and (max-width: 992px) and (min-width: 768px) {
+  .promenaBoje{
+    width: 50%;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -1694,7 +1796,7 @@ min-height: 200px;
     font-size: 28px;
   }
 
-  #nav-menu-container {
+  .nav-menu:first-child {
     display: none;
   }
 
@@ -1798,4 +1900,19 @@ min-height: 200px;
 @keyframes fade {
   from {opacity: .4}
   to {opacity: 1}
+}
+
+body::-webkit-scrollbar {
+  width: 20px;
+}
+
+body::-webkit-scrollbar-track {
+  background: rgb(17, 17, 17);
+  border-left-style: solid;
+  border-width: 1px;
+  border-color: #424242;
+}
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, rgba(92,245,171,1) 0%, rgba(74,222,187,1) 100%);
+  border-radius: 30px;
 }
